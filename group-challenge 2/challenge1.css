@@ -1,0 +1,47 @@
+/* Reset Default Styles */
+* {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/* Calendar box */
+.calendar {
+	width: 400px;
+	margin: 40px auto;
+	background-color: #e47472;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
+	overflow: hidden; /* contain the floated day cells */
+}
+
+/* Each day cell - 2 cells per row */
+.day {
+	float: left;
+	width: 200px;
+	height: 200px;
+	box-sizing: border-box;
+	border: 4px solid transparent; /* reserve space so cells don't shift on hover */
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+}
+
+/* Day name eg. Friday */
+.name {
+	font-size: 1.25em;
+	margin-top: 50px;
+}
+
+/* Day number eg. 15 */
+.num {
+	font-size: 3em;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+/* Mouse over: show dark border and make the texts 5% smaller.
+   .name and .num are sized in em so they scale with the cell font-size */
+.day:hover {
+	border-color: #3b2024;
+	font-size: 95%;
+}
