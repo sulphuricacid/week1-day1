@@ -1,0 +1,79 @@
+/* Reset Default Styles */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #94d6e4;
+	font-family: 'Times New Roman', serif;
+}
+
+/* White page column - positioned relative so the absolute
+   cow image is placed relative to this box */
+#container {
+	position: relative;
+	width: 420px;
+	margin: 0 auto;
+	padding: 25px 30px 160px 30px; /* bottom padding keeps text clear of the fixed yellow bar */
+	background-color: #fff;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Futura', 'Century Gothic', Arial, sans-serif;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin: 15px 0;
+}
+
+/* Farm Animals heading turns red */
+h2.farm {
+	color: red;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+img {
+	border: 1px solid #000;
+	margin: 5px 0;
+}
+
+/* Pig stays in the normal flow, under the cow in the stack order */
+.pig {
+	position: relative;
+	z-index: 1;
+}
+
+/* Cow is pulled out of the normal document flow (the two paragraphs
+   close up together) and placed on top of the pig with z-index */
+.cow {
+	position: absolute;
+	top: 250px;
+	left: 140px;
+	transform: rotate(-5deg);
+	z-index: 2;
+}
+
+/* Other Farm Animals is fixed to the bottom of the viewport
+   with a yellow background, always visible while scrolling */
+.other {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -210px; /* center the bar so it lines up with the centered column */
+	width: 420px;
+	box-sizing: border-box;
+	padding: 5px 30px 15px 30px;
+	background-color: #ff0;
+	z-index: 3;
+}
+.other ul {
+	margin-left: 40px;
+}
